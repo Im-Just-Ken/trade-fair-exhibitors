@@ -75,18 +75,21 @@ function saveExhibitor() {
         return;
     }
 
+    let url = id ? `/api/exhibitors/${id}` : "/api/exhibitors"; //  PATCH for edit, POST for add
+    let method = id ? "PATCH" : "POST";
+
     $.ajax({
-        url: `/api/exhibitors/${id}`,
-        type: "PATCH",
+        url: url,
+        type: method,
         data: exhibitor,
         success: function (response) {
-            console.log("Update successful:", response);
+            console.log(`${method} successful:`, response);
             fetchExhibitors();
             $("#exhibitorModal").modal("hide");
         },
         error: function (xhr) {
-            console.error("Update failed:", xhr.responseText);
-            alert("Failed to update exhibitor.");
+            console.error(`${method} failed:`, xhr.responseText);
+            alert(`Failed to ${id ? "update" : "add"} exhibitor.`);
         },
     });
 }
