@@ -1,6 +1,6 @@
 # Trade Fair Exhibitors
 
-A Laravel 11 project for managing trade fair exhibitors. This project includes MySQL database integration and a frontend using jQuery and Bootstrap.
+A Laravel 11 project for managing trade fair exhibitors. This project includes MySQL database integration and a frontend using jQuery and Bootstrap 5.3.0.
 
 ## Getting Started
 
